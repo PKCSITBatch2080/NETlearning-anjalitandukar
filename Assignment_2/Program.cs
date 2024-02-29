@@ -21,7 +21,7 @@ interface IColor
 
 
 //this below car is class B
-class Car : A_vehicle, IColor
+class Car : vehicle, IColor
 {
     public int Mileage { get; set; }
 
