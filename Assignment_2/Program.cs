@@ -1,85 +1,80 @@
 ﻿using System;
 
-// this below is class A
-abstract class vehicle
+// Abstract class representing a Vehicle
+abstract class VehicleMSystem
 {
     public string Brand { get; set; }
     public string Model { get; set; }
+    public int Year { get; set; }
 
-    public abstract void Calculatemileage();
-    
-    
+    public abstract void DisplayInformation();
 }
 
-//this below is a interface
+// Interface for vehicles with color options
 interface IColor
 {
     void ChooseColor(string color);
-
-   
 }
 
-
-//this below car is class B
-class Car : vehicle, IColor
+// Class representing a Petrol Car
+class PetrolCar : VehicleMSystem, IColor
 {
     public int Mileage { get; set; }
 
-    public override void Calculatemileage()
+    public override void DisplayInformation()
     {
-        Console.WriteLine($"Driving {Brand} {Model} gives {Mileage} mileage");
-    }
-
-    public virtual void detail()
-    {
-        Console.WriteLine($"This car use petrol");
+        Console.WriteLine($"Brand: {Brand}\nModel: {Model}\nYear: {Year}\nMileage: {Mileage}");
     }
 
     public void ChooseColor(string color)
     {
-        Console.WriteLine($"You chose car of {color}");
+        Console.WriteLine($"You chose the {color} color for your {Brand} {Model}");
     }
 }
 
-
-//this below is class D
-class ElectricCar : Car
+// Class representing an Electric Car
+class ElectricCar : VehicleMSystem, IColor
 {
-    public static int NumOfElectricCar;
+    public int BatteryCapacity { get; set; }
 
-    public void count(int num)
+    public override void DisplayInformation()
     {
-        Console.WriteLine($"There are {num} of electric cars");
+        Console.WriteLine($"Brand: {Brand}\nModel: {Model}\nYear: {Year}\nBattery Capacity: {BatteryCapacity} kWh");
     }
 
-    public override void detail()
+    public void ChooseColor(string color)
     {
-        Console.WriteLine("This car uses electricity");
+        Console.WriteLine($"You chose the {color} color for your {Brand} {Model}");
     }
 }
 
-
-//below is the main program
+// Main program
 class Program
 {
-    public static void Main(string[] args)
+    static void Main(string[] args)
     {
-        Console.WriteLine("Below shows about normal car");
-        Car myCar = new Car();
-        myCar.Brand = "Lamborghini";
-        myCar.Model = "Sesto Elemento";
+        // Creating a Petrol Car instance
+        Console.WriteLine("Below shows information about a petrol car:");
+        PetrolCar myPetrolCar = new PetrolCar
+        {
+            Brand = "Lamborghini",
+            Model = "Sesto Elemento",
+            Year = 2023,
+            Mileage = 20
+        };
+        myPetrolCar.DisplayInformation();
+        myPetrolCar.ChooseColor("black");
 
-        myCar.Mileage = 20;
-
-        myCar.Calculatemileage();
-        myCar.detail();
-        myCar.ChooseColor("black");
-
-        //below is for electric car
-        Console.WriteLine("Below shows about electric car");
-        ElectricCar myElectricCar = new ElectricCar();
-        myElectricCar.count(5);
-        myElectricCar.detail();
-
+        // Creating an Electric Car instance
+        Console.WriteLine("\nBelow shows information about an electric car:");
+        ElectricCar myElectricCar = new ElectricCar
+        {
+            Brand = "Tesla",
+            Model = "Model S",
+            Year = 2024,
+            BatteryCapacity = 100
+        };
+        myElectricCar.DisplayInformation();
+        myElectricCar.ChooseColor("blue");
     }
 }
