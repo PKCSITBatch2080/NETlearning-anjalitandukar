@@ -1,52 +1,52 @@
 ﻿using System;
 
-// Abstract class representing a Vehicle
-abstract class VehicleMSystem
-{
-    public string Brand { get; set; }
-    public string Model { get; set; }
-    public int Year { get; set; }
+// // Abstract class representing a Vehicle
+// abstract class VehicleMSystem
+// {
+//     public string Brand { get; set; }
+//     public string Model { get; set; }
+//     public int Year { get; set; }
 
-    public abstract void DisplayInformation();
-}
+//     public abstract void DisplayInformation();
+// }
 
-// Interface for vehicles with color options
-interface IColor
-{
-    void ChooseColor(string color);
-}
+// // Interface for vehicles with color options
+// interface IColor
+// {
+//     void ChooseColor(string color);
+// }
 
-// Class representing a Petrol Car
-class PetrolCar : VehicleMSystem, IColor
-{
-    public int Mileage { get; set; }
+// // Class representing a Petrol Car
+// class PetrolCar : VehicleMSystem, IColor
+// {
+//     public int Mileage { get; set; }
 
-    public override void DisplayInformation()
-    {
-        Console.WriteLine($"Brand: {Brand}\nModel: {Model}\nYear: {Year}\nMileage: {Mileage}");
-    }
+//     public override void DisplayInformation()
+//     {
+//         Console.WriteLine($"Brand: {Brand}\nModel: {Model}\nYear: {Year}\nMileage: {Mileage}");
+//     }
 
-    public void ChooseColor(string color)
-    {
-        Console.WriteLine($"You chose the {color} color for your {Brand} {Model}");
-    }
-}
+//     public void ChooseColor(string color)
+//     {
+//         Console.WriteLine($"You chose the {color} color for your {Brand} {Model}");
+//     }
+// }
 
-// Class representing an Electric Car
-class ElectricCar : VehicleMSystem, IColor
-{
-    public int BatteryCapacity { get; set; }
+// // Class representing an Electric Car
+// class ElectricCar : VehicleMSystem, IColor
+// {
+//     public int BatteryCapacity { get; set; }
 
-    public override void DisplayInformation()
-    {
-        Console.WriteLine($"Brand: {Brand}\nModel: {Model}\nYear: {Year}\nBattery Capacity: {BatteryCapacity} kWh");
-    }
+//     public override void DisplayInformation()
+//     {
+//         Console.WriteLine($"Brand: {Brand}\nModel: {Model}\nYear: {Year}\nBattery Capacity: {BatteryCapacity} kWh");
+//     }
 
-    public void ChooseColor(string color)
-    {
-        Console.WriteLine($"You chose the {color} color for your {Brand} {Model}");
-    }
-}
+//     public void ChooseColor(string color)
+//     {
+//         Console.WriteLine($"You chose the {color} color for your {Brand} {Model}");
+//     }
+// }
 
 // Main program
 class Program
