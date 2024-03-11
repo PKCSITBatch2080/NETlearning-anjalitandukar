@@ -1,8 +1,8 @@
-﻿﻿class Program
+﻿﻿﻿class Program
 {
     public static void Main()
     {
-        string filePath = @"D:\GIT\NETlearning-anjalitandukar\Assignment_3\Inflation.csv";
+        string filePath = @"D:\GIT\NETlearning-anjalitandukar\Assignment_3\Inflation\Inflation.csv";
         InflationAnalysis analysis = new InflationAnalysis();
         analysis.ReadInflationData(filePath);
 

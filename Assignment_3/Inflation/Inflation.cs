@@ -1,4 +1,6 @@
-class Inflation
+using System;
+
+public class Inflation
 {
     public string RegionalMember { get; set; }
     public int Year { get; set; }
@@ -6,6 +8,4 @@ class Inflation
     public string UnitOfMeasurement { get; set; }
     public string Subregion { get; set; }
     public string CountryCode { get; set; }
-
-
 }
