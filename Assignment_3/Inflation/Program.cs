@@ -1,4 +1,6 @@
-﻿﻿﻿class Program
+﻿﻿﻿using System;
+
+﻿class Program
 {
     public static void Main()
     {
@@ -14,7 +16,7 @@
         }
 
         Console.WriteLine("\nYear when Nepal has highest inflation:");
-        string countryName = "Nepal";
+         string countryName = "Nepal";
         int yearWithHighestInflationForNepal = analysis.GetYearWithHighestInflationForCountry(countryName);
         Console.WriteLine(yearWithHighestInflationForNepal);
 
