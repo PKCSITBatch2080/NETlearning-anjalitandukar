@@ -44,7 +44,7 @@ using System;
 // var highest3 = m.GetMax(3.4, 5.6, 78.4, 23.4, 67.8);
 // var highest4 = m.GetMax(3.4);
 
-// Generics g = new();
+ //Generics g = new();
 // g.Display<string>("Anjali ");
 // g.Display<int>(786);
 
@@ -66,4 +66,8 @@ using System;
 
 // CyberSecurityStudent.Do();
 
-FDHandling.CreateFile();
+// FDHandling.CreateFile();
+
+ParallelAndASync pa = new ();
+pa.ProcessNumbers();
+pa.ProcessNumbersParallel();
